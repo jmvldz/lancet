@@ -1,4 +1,0 @@
-Lancet
-======
-
-Video Conferencing Platform
