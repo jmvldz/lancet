@@ -1,10 +1,15 @@
 {
   "name": "lancet",
+  "description": "Video conferencing platform",
   "version": "0.0.0",
+  "author": "Josh Valdez <exxonvaldeeez@gmail.com>",
+  "private": true,
   "dependencies": {
     "socketstream": "0.3.x",
     "ss-stylus": "0.1.x",
-    "ss-hogan": "0.1.x"
+    "ss-hogan": "0.1.x",
+    "ss-jade": ">= 0.1.x",
+    "express": ">= 3.0.0"
    },
   "devDependencies": {
     "grunt": "0.4.0rc7",
@@ -27,7 +32,10 @@
     "grunt-open": "~0.1.0",
     "matchdep": "~0.1.1",
     "grunt-google-cdn": "~0.1.0",
-    "grunt-ngmin": "~0.0.1"
+    "grunt-ngmin": "~0.0.1",
+    "mocha": ">= 1.7.x",
+    "sinon": ">= 1.5.x",
+    "should": ">= 1.2.x"
   },
   "engines": {
     "node": ">=0.8.0"

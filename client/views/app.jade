@@ -1,0 +1,46 @@
+extends layout
+
+block content
+  // ================= NAVBAR ===================
+  div.navbar.navbar-static-top(ng-controller="NavCtrl")
+    div.navbar-inner
+      div.container
+        // .btn-navbar is used as toggle for collapased content
+        a.btn.btn-navbar(href="#", data-toggle="collapse", data-target=".nav-collapse")
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+
+        // leave brand out here if you want it shown
+        a.brand(href="#") Demo Project
+
+        // everything in here hidden at 940px or less
+        div.nav-collapse.navbar-responsive-collapse
+          ul.nav
+            li(ng-class="isActive('home')")
+              a(href="home", ng-class="{ on: isHome }") Home
+            li(ng-class="isActive('foo')")
+              a(href="foo", ng-class="{ on: isFoo }") Foo
+            li(ng-class="isActive('bar')")
+              a(href="bar", ng-class="{ on: isBar }") Bar
+  // fluid container 
+  div.row-fluid#content(ng-switch="path[0]")
+    // ================ HOME PAGE ===============
+    div.container-fluid(ng-switch-when="home", ng-controller="HomeCtrl")
+      h1 Home 
+      p Last contact from server was {{date}}
+    // ================ FOO PAGE ================
+    div.container-fluid(ng-switch-when="foo", ng-controller="FooCtrl")
+      div.span3
+          div.well.sidebar-nav
+            ul.nav.nav-list
+              li.nav-header Persons
+              li.divider
+                li(ng-repeat="person in persons", ng-class="isSelected($index, person)")
+                  a(href="#", ng-click="select($index, person)") {{person.firstname}}
+      div.span9.hero-unit
+        p Foo
+    // ================ BAR PAGE ================
+    div.container-fluid(ng-switch-when="bar", ng-controller="BarCtrl")
+      div.hero-unit
+        p Bar
