@@ -45,17 +45,6 @@ module.exports = function (grunt) {
             ];
           }
         }
-      },
-      test: {
-        options: {
-          port: 8000,
-          middleware: function (connect) {
-            return [
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, 'test')
-            ];
-          }
-        }
       }
     },
     open: {
@@ -75,44 +64,6 @@ module.exports = function (grunt) {
         'Gruntfile.js',
         '<%= yeoman.app %>/scripts/{,*/}*.js'
       ]
-    },
-    testacular: {
-      unit: {
-        configFile: 'testacular.conf.js',
-        singleRun: true
-      }
-    },
-    coffee: {
-      dist: {
-        files: {
-          '.tmp/scripts/coffee.js': '<%= yeoman.app %>/scripts/*.coffee'
-        }
-      },
-      test: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/spec',
-          src: '*.coffee',
-          dest: 'test/spec'
-        }]
-      }
-    },
-    compass: {
-      options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: '<%= yeoman.app %>/components',
-        relativeAssets: true
-      },
-      dist: {},
-      server: {
-        options: {
-          debugInfo: true
-        }
-      }
     },
     concat: {
       dist: {
