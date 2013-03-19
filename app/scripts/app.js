@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('lancetApp', [])
-  .config(['$routeProvider', function ($routeProvider) {
+  .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -10,4 +10,4 @@ angular.module('lancetApp', [])
       .otherwise({
         redirectTo: '/'
       });
-  }]);
+  });
